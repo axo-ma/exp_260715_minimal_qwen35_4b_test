@@ -75,3 +75,5 @@ Invoke-RestMethod http://127.0.0.1:8080/v1/models |
 llama.cpp: b9222
 openai:    1.82.0 в составе portable WinPython 3.12
 ```
+
+Запускаем minimal_chat.py
