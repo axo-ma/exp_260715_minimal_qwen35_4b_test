@@ -1,0 +1,16 @@
+{
+    "model": "qwen3:4b-instruct",
+    "created_at": "2026-07-19T10:12:46.2380272Z",
+    "message": {
+        "role": "assistant",
+        "content": "{\"queries\": [\"extract metadata and transaction table from Excel files including leader, export date, transaction date, article number, and cost\", \"parse spreadsheet data to retrieve leader, export date, and transaction details such as date, article, and amount ignoring summary rows\"]}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 14111184000,
+    "load_duration": 3460362100,
+    "prompt_eval_count": 576,
+    "prompt_eval_duration": 4304315000,
+    "eval_count": 54,
+    "eval_duration": 3119065000
+}

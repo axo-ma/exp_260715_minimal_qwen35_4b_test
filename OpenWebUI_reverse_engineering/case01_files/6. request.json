@@ -1,0 +1,13 @@
+{
+    "model": "qwen3:4b-instruct",
+    "messages": [
+        {
+            "role": "user",
+            "content": "### Task:\nAnalyze the chat history to determine the necessity of generating search queries, in the given language. By default, **prioritize generating 1-3 broad and relevant search queries** unless it is absolutely certain that no additional information is required. The aim is to retrieve comprehensive, updated, and valuable information even with minimal uncertainty. If no search is unequivocally needed, return an empty list.\n\n### Guidelines:\n- Respond **EXCLUSIVELY** with a JSON object. Any form of extra commentary, explanation, or additional text is strictly prohibited.\n- When generating search queries, respond in the format: { \"queries\": [\"query1\", \"query2\"] }, ensuring each query is distinct, concise, and relevant to the topic.\n- If and only if it is entirely certain that no useful results can be retrieved by a search, return: { \"queries\": [] }.\n- Err on the side of suggesting search queries if there is **any chance** they might provide useful or updated information.\n- Be concise and focused on composing high-quality search queries, avoiding unnecessary elaboration, commentary, or assumptions.\n- Today's date is: 2026-07-19.\n- Always prioritize providing actionable and broad queries that maximize informational coverage.\n\n### Output:\nStrictly return in JSON format: \n{\n  \"queries\": [\"query1\", \"query2\"]\n}\n\n### Chat History:\n<chat_history>\nUSER: <attached_files>\n<file type=\"file\" url=\"90a7b8e1-5a7e-4fc6-979e-c1a61b8ec31f\" content_type=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\" name=\"Отчет 1.xlsx\"/>\n<file type=\"file\" url=\"720945e7-a38e-4192-9b54-278c2cdbedc2\" content_type=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\" name=\"Отчет 2.xlsx\"/>\n<file type=\"file\" url=\"2cfaac85-c7b2-46ee-bdfc-79f074acf374\" content_type=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\" name=\"Отчет 3.xlsx\"/>\n</attached_files>\n\nИзвлеки из этих файлов метаданные (руководитель, дата выгрузки) и саму таблицу с транзакциями (дата, артикул, стоимость). Игнорируй строки итогов. Результат представь в виде JSON\n</chat_history>\n"
+        }
+    ],
+    "stream": false,
+    "options": {
+        "num_ctx": 20000
+    }
+}
