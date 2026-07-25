@@ -102,7 +102,7 @@ def _wait_until_stopped(timeout: float = 10.0) -> None:
     )
 
 
-def stop(timeout: float = 10.0) -> bool:
+def llamacpp_stop(timeout: float = 10.0) -> bool:
     """Останавливает llama-server независимо от того, кем он был запущен."""
     global _server
 
@@ -133,7 +133,7 @@ def stop(timeout: float = 10.0) -> bool:
     return stopped
 
 
-def start(
+def llamacpp_start(
     *,
     server_path: str | Path = DEFAULT_SERVER_PATH,
     model_path: str | Path = DEFAULT_MODEL_PATH,
@@ -150,7 +150,7 @@ def start(
     if is_ready():
         raise RuntimeError(
             f"llama-server уже работает на {HOST}:{PORT}. "
-            "Для перезапуска используй exp.restart()."
+            "Для перезапуска используй exp.llamacpp_restart()."
         )
 
     server_path = Path(server_path)
@@ -205,10 +205,10 @@ def start(
     )
 
 
-def restart(**kwargs) -> subprocess.Popen:
+def llamacpp_restart(**kwargs) -> subprocess.Popen:
     """Останавливает текущий llama-server и запускает новый."""
-    stop()
-    return start(**kwargs)
+    llamacpp_stop()
+    return llamacpp_start(**kwargs)
 
 def print_response(response) -> str:
     """Печатает ответ модели и статистику llama.cpp."""
