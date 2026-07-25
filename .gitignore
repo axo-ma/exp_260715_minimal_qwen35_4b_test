@@ -1,8 +1,10 @@
-# Local llama.cpp binaries
-/llama.cpp/
+# Игнорировать всё содержимое папок
+/llama.cpp/*
+/models/*
 
-# Local GGUF models
-/models/
+# Но сохранить служебные файлы
+!/llama.cpp/.gitkeep
+!/models/.gitkeep
 
 # Python
 __pycache__/
